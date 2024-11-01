@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgfd8kd1arpme"]
+
+[ext_resource type="Script" path="res://Scenes/hit_player.gd" id="1_mv11b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yahl"]
+size = Vector2(20, 10)
+
+[node name="HitPlayer" type="Area2D"]
+script = ExtResource("1_mv11b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4yahl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
